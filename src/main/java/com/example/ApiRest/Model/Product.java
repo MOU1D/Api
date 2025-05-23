@@ -1,10 +1,12 @@
 package com.example.ApiRest.Model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.List;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -16,18 +18,30 @@ public class Product {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "Product", nullable = false)
+    @Column(name = "name", nullable = false)
     private String nameOfProduct;
 
-    @Column(name = "price", nullable = false)
-    private double priceOfProduct;
+    @Column(name = "price_of_product", nullable = false)
+    private Double priceOfProduct;
 
-    private String description;
+    @Column(name = "description_of_product", nullable = false)
+    private String descriptionOfProduct;
+
+    @Column(name = "quantity", nullable = false)
+    private Integer quantity;
+
+    @Column(name = "image_url")
+    private String imageUrl;
 
     @Enumerated(EnumType.STRING)
-    private ProductStatus productStatus;
+    @Column(name = "status", nullable = false)
+    private ProductStatus status;
 
-    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
-    private List<CommandItem> command;
+    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
+    @JsonManagedReference("product-items")
+    private Set<CommandItem> items = new LinkedHashSet<>();
 
+    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
+    @JsonManagedReference("product-cart-items")
+    private Set<CartItem> cartItems = new LinkedHashSet<>();
 }

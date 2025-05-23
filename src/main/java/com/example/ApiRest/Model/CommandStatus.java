@@ -1,5 +1,7 @@
 package com.example.ApiRest.Model;
 
 public enum CommandStatus {
-    in_stock, in_transit, arrived
+    IN_STOCK,
+    IN_TRANSIT,
+    ARRIVED
 }

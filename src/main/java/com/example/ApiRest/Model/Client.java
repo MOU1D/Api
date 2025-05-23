@@ -1,5 +1,6 @@
 package com.example.ApiRest.Model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,25 +19,33 @@ public class Client {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "first name", nullable = false)
+    @Column(name = "first_name", nullable = false)
     private String firstName;
 
-    @Column(name = "last name", nullable = false)
+    @Column(name = "second_name", nullable = false)
     private String secondName;
 
-    @Column(name = "date of birth", nullable = false)
+    @Column(name = "last_name", nullable = false)
+    private String lastName;
+
+    @Column(name = "date_of_birth", nullable = false)
     private Date dateOfBirth;
 
-    @Column(name = "email", nullable = false)
+    @Column(name = "email", nullable = false, unique = true)
     private String email;
 
-    @OneToMany(mappedBy = "client", orphanRemoval = true)
+    @Column(name = "password", nullable = false)
+    private String password;
+
+    @Column(name = "address", nullable = false)
+    private String address;
+
+    @Column(name = "phone_number", nullable = false)
+    private String phoneNumber;
+
+    @OneToMany(mappedBy = "client", fetch = FetchType.LAZY)
     private Set<Command> commands = new LinkedHashSet<>();
 
-    public Client() {
-        // Constructeur sans argument nécessaire pour la désérialisation JSON
-    }
-
+    @OneToMany(mappedBy = "client", fetch = FetchType.LAZY)
+    private Set<Favorite> favorites = new LinkedHashSet<>();
 }
-
-
