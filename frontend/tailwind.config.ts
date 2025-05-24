@@ -3,24 +3,33 @@ import type { Config } from "tailwindcss";
 const config: Config = {
   darkMode: 'class',
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    container: {
+      center: true,
+      padding: '2rem',
+      screens: {
+        '2xl': '1400px',
+      },
+    },
     extend: {
       colors: {
         primary: {
-          50: '#f5f3ff',
-          100: '#ede9fe',
-          200: '#ddd6fe',
-          300: '#c4b5fd',
-          400: '#a78bfa',
-          500: '#8b5cf6',
-          600: '#7c3aed',
-          700: '#6d28d9',
-          800: '#5b21b6',
-          900: '#4c1d95',
+          DEFAULT: '#3B82F6',
+          50: '#EBF2FE',
+          100: '#D7E6FD',
+          200: '#B0CDFB',
+          300: '#89B4F9',
+          400: '#629BF7',
+          500: '#3B82F6',
+          600: '#0B61EE',
+          700: '#084BB8',
+          800: '#063583',
+          900: '#041F4D',
+          950: '#021332',
         },
         secondary: {
           50: '#f8fafc',
@@ -34,9 +43,41 @@ const config: Config = {
           800: '#1e293b',
           900: '#0f172a',
         },
+        border: 'hsl(var(--border))',
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
       },
       fontFamily: {
-        sans: ['Inter var', 'sans-serif'],
+        sans: ['SF Pro Display', 'Inter var', 'system-ui', 'sans-serif'],
+      },
+      backgroundImage: {
+        'gradient-premium': 'linear-gradient(to right, var(--tw-gradient-stops))',
+      },
+      animation: {
+        'fade-up': 'fade-up 0.5s ease-out',
+        'fade-down': 'fade-down 0.5s ease-out',
+      },
+      keyframes: {
+        'fade-up': {
+          '0%': {
+            opacity: '0',
+            transform: 'translateY(10px)',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateY(0)',
+          },
+        },
+        'fade-down': {
+          '0%': {
+            opacity: '0',
+            transform: 'translateY(-10px)',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateY(0)',
+          },
+        },
       },
     },
   },
