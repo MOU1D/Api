@@ -27,10 +27,22 @@ export default function MissionSection({
     ];
 
     return (
-        <section className="relative py-32 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
+        <section className="relative py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
+
+            {/* BACKGROUND IMAGE */}
+            <div className="absolute inset-0 z-0">
+                <div
+                    className="w-full h-full bg-cover bg-center bg-no-repeat"
+                    style={{
+                        backgroundImage: "url('https://images.unsplash.com/photo-1707209856575-a80b9dff5524?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nzh8fHdoaXRlfGVufDB8fDB8fHww')"
+                    }}
+                />
+                {/* Overlay pour adoucir l'image */}
+                <div className="absolute inset-0 bg-white/70 backdrop-blur-[1px]" />
+            </div>
 
             {/* RAPPELS VISUELS MINIMALISTES EN VIOLET */}
-            <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute inset-0 pointer-events-none z-10">
                 {/* Particules violet subtiles */}
                 <div className="absolute top-40 left-20 w-2 h-2 bg-[#7A69F9] rounded-full opacity-20 animate-pulse" />
                 <div className="absolute top-1/3 right-32 w-1 h-1 bg-[#7A69F9] rounded-full opacity-30" />
@@ -38,13 +50,13 @@ export default function MissionSection({
                 <div className="absolute bottom-40 right-24 w-2 h-2 bg-[#7A69F9] rounded-full opacity-15 animate-pulse" style={{ animationDelay: "2s" }} />
             </div>
 
-            <div className="relative max-w-6xl mx-auto">
+            <div className="relative max-w-6xl mx-auto z-20">
                 <motion.div
                     className="text-center mb-24"
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 1 }}
+                    transition={{ duration: 1.2, ease: "easeOut" }}
                 >
                     {/* Ligne décorative minimaliste - AGRANDIE */}
                     <motion.div
@@ -55,7 +67,7 @@ export default function MissionSection({
                         transition={{ duration: 1.5, delay: 0.2 }}
                     />
 
-                    {/* TITRE HERO STYLÉ AVEC GRADIENT FLUIDE */}
+                    {/* TITRE HERO STYLÉ AVEC GRADIENT FLUIDE ET HALO ÉTALÉ */}
                     <motion.div
                         className="relative mb-12"
                         initial={{ opacity: 0, y: 40 }}
@@ -63,42 +75,62 @@ export default function MissionSection({
                         viewport={{ once: true }}
                         transition={{ duration: 1.2, delay: 0.3 }}
                     >
+                        {/* Halos diffusés multiples qui s'étalent sur toute la section */}
+                        <div className="absolute -z-10 blur-[200px] w-full h-96 bg-gradient-to-r from-[#3BC4F2]/20 via-[#7A69F9]/30 via-[#F26378]/20 to-[#F5833F]/20 top-[-100px] left-0 rounded-full" />
+                        <div className="absolute -z-10 blur-[150px] w-3/4 h-80 bg-gradient-to-br from-[#7A69F9]/25 to-[#3BC4F2]/15 top-[-80px] left-1/4 rounded-full" />
+                        <div className="absolute -z-10 blur-[180px] w-2/3 h-72 bg-gradient-to-l from-[#F26378]/20 to-[#F5833F]/15 top-[-60px] right-0 rounded-full" />
+
                         <h2
-                            className="text-6xl sm:text-7xl lg:text-8xl font-extralight tracking-tight leading-[0.9] relative"
+                            className="relative leading-[0.9]"
                             style={{
-                                background: "linear-gradient(135deg, #3BC4F2, #7A69F9, #F26378, #F5833F)",
-                                backgroundSize: "400% 400%",
-                                WebkitBackgroundClip: "text",
-                                WebkitTextFillColor: "transparent",
-                                backgroundClip: "text",
-                                animation: "gradientFlow 8s ease-in-out infinite",
-                                fontFamily: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
-                                fontWeight: "200",
-                                letterSpacing: "-0.02em"
+                                fontFamily: "'Playfair Display', 'DM Serif Display', 'Libre Baskerville', serif",
+                                fontWeight: "300"
                             }}
                         >
-                            <span className="block">Notre</span>
-                            <span className="block text-7xl sm:text-8xl lg:text-9xl font-thin tracking-tighter ml-8">Mission</span>
+                            <span
+                                className="block text-6xl sm:text-7xl lg:text-8xl"
+                                style={{
+                                    background: "linear-gradient(135deg, #3BC4F2, #7A69F9, #F26378, #F5833F)",
+                                    backgroundSize: "300% 300%",
+                                    WebkitBackgroundClip: "text",
+                                    WebkitTextFillColor: "transparent",
+                                    backgroundClip: "text",
+                                    animation: "gradientFlowSlow 12s ease-in-out infinite",
+                                    letterSpacing: "-0.02em"
+                                }}
+                            >
+                                Notre
+                            </span>
+                            <span
+                                className="block text-7xl sm:text-8xl lg:text-9xl ml-8"
+                                style={{
+                                    background: "linear-gradient(135deg, #3BC4F2, #7A69F9, #F26378, #F5833F)",
+                                    backgroundSize: "300% 300%",
+                                    WebkitBackgroundClip: "text",
+                                    WebkitTextFillColor: "transparent",
+                                    backgroundClip: "text",
+                                    animation: "gradientFlowSlow 12s ease-in-out infinite",
+                                    fontWeight: "200",
+                                    letterSpacing: "-0.04em"
+                                }}
+                            >
+                                Mission
+                            </span>
                         </h2>
-
-                        {/* Effet de glow subtil derrière le texte */}
-                        <div
-                            className="absolute inset-0 blur-3xl opacity-20"
-                            style={{
-                                background: "linear-gradient(135deg, #3BC4F2, #7A69F9, #F26378, #F5833F)",
-                                backgroundSize: "400% 400%",
-                                animation: "gradientFlow 8s ease-in-out infinite",
-                                zIndex: -1
-                            }}
-                        />
                     </motion.div>
 
                     <motion.p
-                        className="text-xl sm:text-2xl text-gray-600 leading-relaxed max-w-4xl mx-auto font-light"
+                        className="text-xl sm:text-2xl leading-relaxed max-w-4xl mx-auto"
+                        style={{
+                            fontFamily: "'Inter', 'SF Pro Display', system-ui, sans-serif",
+                            fontWeight: "300",
+                            letterSpacing: "0.01em",
+                            color: "#374151"
+                        }}
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 1, delay: 0.6 }}
+                        transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
                     >
                         {description}
                     </motion.p>
@@ -110,7 +142,7 @@ export default function MissionSection({
                     initial={{ opacity: 0, scale: 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.8, delay: 0.8 }}
+                    transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
                 >
                     {cards.map((card, index) => (
                         <motion.div
@@ -129,7 +161,7 @@ export default function MissionSection({
                                 rotateY: 5,
                                 rotateX: 5,
                                 scale: 1.02,
-                                transition: { duration: 0.3 }
+                                transition: { duration: 0.3, ease: "easeOut" }
                             }}
                             style={{ perspective: "1000px" }}
                         >
@@ -146,9 +178,9 @@ export default function MissionSection({
                 </motion.div>
             </div>
 
-            {/* CSS pour l'animation du gradient du titre */}
+            {/* CSS pour l'animation du gradient du titre PLUS LENTE */}
             <style jsx>{`
-        @keyframes gradientFlow {
+        @keyframes gradientFlowSlow {
           0% {
             background-position: 0% 50%;
           }
@@ -159,6 +191,8 @@ export default function MissionSection({
             background-position: 0% 50%;
           }
         }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500&display=swap');
       `}</style>
         </section>
     );

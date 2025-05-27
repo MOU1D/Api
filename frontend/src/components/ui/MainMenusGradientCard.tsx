@@ -32,7 +32,7 @@ export const MainMenusGradientCard = ({
                 <ArrowUpRight className="absolute top-2 right-2 z-10 size-5 translate-y-4 text-neutral-700 opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100" />
             )}
 
-            {/* GRADIENT EXACTEMENT COMME L'ORIGINAL MAIS PLUS VIVE */}
+            {/* GRADIENT EXACTEMENT COMME L'ORIGINAL */}
             <div
                 className={cn(
                     "-translate-x-1/2 -translate-y-1/2 absolute transform-gpu rounded-full transition-transform duration-500 group-hover:scale-[3]",
@@ -49,6 +49,7 @@ export const MainMenusGradientCard = ({
                     top: `${mouse.elementY}px`,
                     background:
                         "linear-gradient(135deg, #3BC4F2, #7A69F9, #F26378, #F5833F)",
+                    willChange: "transform"
                 }}
             />
 
