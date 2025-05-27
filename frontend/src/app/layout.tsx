@@ -1,14 +1,13 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import Header from '@/components/layout/Header';
-import Providers from '@/components/Providers';
+import { Providers } from './providers';
 
 const inter = Inter({ subsets: ['latin'] });
 
-export const metadata = {
-    title: 'E-Shop - Votre boutique en ligne',
-    description: 'Découvrez notre sélection de produits de qualité',
+export const metadata: Metadata = {
+    title: 'LUXE - Boutique de Luxe',
+    description: 'Découvrez notre collection exclusive de produits de luxe',
 };
 
 export default function RootLayout({
@@ -21,7 +20,6 @@ export default function RootLayout({
             <body className={inter.className}>
                 <Providers>
                     <div className="min-h-screen flex flex-col">
-                        <Header />
                         <main className="flex-grow">
                             {children}
                         </main>

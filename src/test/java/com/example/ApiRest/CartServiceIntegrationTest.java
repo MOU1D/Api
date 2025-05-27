@@ -48,7 +48,7 @@ public class CartServiceIntegrationTest {
         testProduct = new Product();
         testProduct.setNameOfProduct("Test Product");
         testProduct.setPriceOfProduct(99.99);
-        testProduct.setProductStatus(ProductStatus.IN_STOCK);
+        testProduct.setStatus(ProductStatus.IN_STOCK);
         testProduct = productRepository.save(testProduct);
     }
 

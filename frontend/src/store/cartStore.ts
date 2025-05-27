@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { api } from '@/services/api';
-import { useAuthStore } from './authStore';
+import { useAuthStore } from '../stores/authStore';
 
 export type CartItem = {
     id: number;

@@ -8,7 +8,7 @@ DELETE FROM Products;
 DELETE FROM Clients;
 
 -- Insertion des produits
-INSERT INTO Products (id, name_of_product, description_of_product, price_of_product, quantity, status, image_url) VALUES
+INSERT INTO Products (id, name, description_of_product, price_of_product, quantity, status, image_url) VALUES
 (1, 'Sneakers Premium', 'Des sneakers confortables et élégantes pour toutes les occasions', 129.99, 10, 'IN_STOCK', 'http://localhost:8081/api/v1/products/images/sneakers-1.jpg'),
 (2, 'T-shirt Design', 'T-shirt en coton bio avec design unique', 29.99, 20, 'IN_STOCK', 'http://localhost:8081/api/v1/products/images/tshirt-1.jpg'),
 (3, 'Running Pro', 'Chaussures de course professionnelles', 149.99, 5, 'IN_STOCK', 'http://localhost:8081/api/v1/products/images/running-1.jpg'),

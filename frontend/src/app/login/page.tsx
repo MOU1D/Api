@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import api from '@/lib/axios'
+import api from '../../lib/axios'
 import { useAuthStore } from '@/stores/authStore'
 import Link from 'next/link'
 
