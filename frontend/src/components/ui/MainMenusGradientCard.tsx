@@ -25,7 +25,7 @@ export const MainMenusGradientCard = ({
 
     return (
         <div
-            className="group relative transform-gpu overflow-hidden rounded-[20px] bg-white/10 p-2 transition-transform hover:scale-[1.01] active:scale-90"
+            className="group relative transform-gpu overflow-hidden rounded-[20px] bg-white/10 p-2 transition-transform hover:scale-[1.01] active:scale-90 h-full flex flex-col"
             ref={parentRef}
         >
             {withArrow && (
@@ -54,7 +54,7 @@ export const MainMenusGradientCard = ({
             />
 
             {/* FOND EXACTEMENT COMME L'ORIGINAL */}
-            <div className="absolute inset-px rounded-[19px] bg-neutral-100/80" />
+            <div className="absolute inset-px rounded-[19px] bg-neutral-100/80 flex-1" />
 
             {children && (
                 <div
@@ -67,16 +67,22 @@ export const MainMenusGradientCard = ({
                 </div>
             )}
 
-            {/* CONTENU EXACTEMENT COMME L'ORIGINAL */}
-            <div className="relative px-4 pt-4 pb-2">
-                <h3 className="font-semibold text-lg text-neutral-800">
-                    {title}
-                </h3>
-                {description && (
-                    <p className="mt-2 text-neutral-600">
-                        {description}
-                    </p>
-                )}
+            {/* CONTENU AVEC TAILLE FIXE ET TRAIT VIOLET */}
+            <div className="relative px-4 pt-4 pb-4 flex-1 flex flex-col justify-between">
+                <div>
+                    <div className="relative">
+                        <h3 className="font-semibold text-lg text-neutral-800 mb-2 leading-tight">
+                            {title}
+                        </h3>
+                        {/* Trait violet sous le titre des cartes */}
+                        <div className="w-12 h-[1.5px] bg-[#7A69F9]/60 rounded-full mb-3" />
+                    </div>
+                    {description && (
+                        <p className="text-neutral-600 leading-relaxed text-sm line-clamp-4">
+                            {description}
+                        </p>
+                    )}
+                </div>
             </div>
         </div>
     );

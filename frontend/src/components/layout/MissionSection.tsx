@@ -9,20 +9,20 @@ interface MissionSectionProps {
 
 export default function MissionSection({
     title = 'Notre Mission',
-    description = 'Nous repensons la mode numérique pour créer des expériences d\'exception. Innovation, simplicité et élégance au service du luxe moderne.',
+    description = 'Plus qu\'une boutique, un regard, une emotion, un accompagnement !',
 }: MissionSectionProps) {
     const cards = [
         {
-            title: 'Innovation',
-            description: 'Nous intégrons les technologies les plus avancées pour créer des expériences immersives qui redéfinissent les codes du luxe numérique.',
+            title: 'Vous n’êtes pas là par hasard',
+            description: 'Ce lieu est fait pour celles et ceux qui cherchent plus qu’un produit. Une émotion. Une intention. Une présence.',
         },
         {
-            title: 'Simplicité',
-            description: 'Des interfaces épurées et intuitives où chaque interaction est pensée pour offrir une fluidité parfaite, signature de l\'élégance moderne.',
+            title: 'Chaque détail compte',
+            description: 'Rien ici n’est laissé au hasard. Chaque choix, chaque matière, chaque interface a été pensé pour vous, avec minutie et exigence.',
         },
         {
-            title: 'Élégance',
-            description: 'Chaque pixel compte dans notre quête de perfection esthétique. Nous créons des expériences visuelles qui inspirent et enchantent.',
+            title: 'Laissez-vous guider, subtilement',
+            description: 'Terminé les achats impulsifs. Nous vous aidons à investir dans des pièces durables qui vous ressemblent',
         },
     ];
 
@@ -120,13 +120,7 @@ export default function MissionSection({
                     </motion.div>
 
                     <motion.p
-                        className="text-xl sm:text-2xl leading-relaxed max-w-4xl mx-auto"
-                        style={{
-                            fontFamily: "'Inter', 'SF Pro Display', system-ui, sans-serif",
-                            fontWeight: "300",
-                            letterSpacing: "0.01em",
-                            color: "#374151"
-                        }}
+                        className="text-xl sm:text-2xl text-gray-700 leading-relaxed max-w-4xl mx-auto font-light"
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
