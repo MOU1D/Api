@@ -9,7 +9,7 @@ interface MissionSectionProps {
 
 export default function MissionSection({
     title = 'Notre Mission',
-    description = 'Plus qu\'une boutique, un regard, une emotion, un accompagnement !',
+    description = 'Plus qu\'une boutique, un Regard, une Émotion, un Accompagnement !',
 }: MissionSectionProps) {
     const cards = [
         {
@@ -25,10 +25,11 @@ export default function MissionSection({
             description: 'Terminé les achats impulsifs. Nous vous aidons à investir dans des pièces durables qui vous ressemblent',
         },
     ];
-
     return (
-        <section className="relative py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
-
+        <section 
+            id="mission-section"
+            className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
+        >
             {/* BACKGROUND IMAGE */}
             <div className="absolute inset-0 z-0">
                 <div
@@ -52,15 +53,15 @@ export default function MissionSection({
 
             <div className="relative max-w-6xl mx-auto z-20">
                 <motion.div
-                    className="text-center mb-24"
+                    className="text-center mb-16"
                     initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 1.2, ease: "easeOut" }}
                 >
-                    {/* Ligne décorative minimaliste - AGRANDIE */}
+                    {/* Ligne décorative minimaliste */}
                     <motion.div
-                        className="w-32 h-[2px] bg-[#7A69F9]/30 mx-auto mb-12 rounded-full"
+                        className="w-32 h-[2px] bg-[#7A69F9]/30 mx-auto mb-8 rounded-full"
                         initial={{ scaleX: 0, opacity: 0 }}
                         whileInView={{ scaleX: 1, opacity: 1 }}
                         viewport={{ once: true }}
@@ -69,7 +70,7 @@ export default function MissionSection({
 
                     {/* TITRE HERO STYLÉ AVEC GRADIENT FLUIDE ET HALO ÉTALÉ */}
                     <motion.div
-                        className="relative mb-12"
+                        className="relative mb-8"
                         initial={{ opacity: 0, y: 40 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
@@ -132,7 +133,7 @@ export default function MissionSection({
 
                 {/* Grid avec cartes et effet de tilt au hover */}
                 <motion.div
-                    className="grid grid-cols-1 lg:grid-cols-3 gap-12 max-w-6xl mx-auto"
+                    className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
                     initial={{ opacity: 0, scale: 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
