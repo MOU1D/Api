@@ -5,9 +5,10 @@ import Navbar from '../components/layout/Navbar';
 import HeroSection from '@/components/layout/HeroSection';
 import MissionSection from '@/components/layout/MissionSection';
 import CollectionsSection from '@/components/layout/CollectionsSection';
-import ArchitectureAndGiftSection from '@/components/layout/ArchitectureAndGiftSection';
+import GiftSection from '@/components/layout/GiftSection';
 import NewsletterSection from '@/components/layout/NewsletterSection';
 import Footer from '@/components/layout/Footer';
+import VisionSection from '@/components/layout/VisionSection';
 
 export default function Home() {
     const containerRef = useRef(null);
@@ -16,9 +17,11 @@ export default function Home() {
         <main className="w-full bg-black" ref={containerRef}>
             <Navbar />
             <HeroSection />
+            <VisionSection />
             <MissionSection />
             <CollectionsSection />
-            <ArchitectureAndGiftSection />
+           
+            <GiftSection />
             <NewsletterSection />
             <Footer />
         </main>

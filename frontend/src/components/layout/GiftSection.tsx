@@ -4,49 +4,9 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function ArchitectureAndGiftSection() {
+export default function GiftSection() {
     return (
         <>
-            {/* Architecture & Style Section */}
-            <section className="relative min-h-screen bg-[#0a0a0a] py-32">
-                <div className="max-w-7xl mx-auto px-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <motion.div
-                            initial={{ opacity: 0, x: -50 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.8 }}
-                            className="relative aspect-square overflow-hidden rounded-lg"
-                        >
-                            <Image
-                                src="https://images.pexels.com/photos/7031010/pexels-photo-7031010.jpeg"
-                                alt="Design Architectural"
-                                fill
-                                className="object-cover"
-                            />
-                            <div className="absolute inset-0 bg-black/40 hover:bg-black/20 transition-colors flex items-center justify-center">
-                                <h3 className="text-white text-3xl font-light">Design Architectural</h3>
-                            </div>
-                        </motion.div>
-                        <motion.div
-                            initial={{ opacity: 0, x: 50 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.8, delay: 0.2 }}
-                            className="relative aspect-square overflow-hidden rounded-lg"
-                        >
-                            <Image
-                                src="https://images.pexels.com/photos/18095371/pexels-photo-18095371.jpeg"
-                                alt="Urban Luxury"
-                                fill
-                                className="object-cover"
-                            />
-                            <div className="absolute inset-0 bg-black/40 hover:bg-black/20 transition-colors flex items-center justify-center">
-                                <h3 className="text-white text-3xl font-light">Urban Luxury</h3>
-                            </div>
-                        </motion.div>
-                    </div>
-                </div>
-            </section>
-
             {/* Gift Section */}
             <section className="relative min-h-screen bg-[#0a0a0a] py-32">
                 <div className="max-w-7xl mx-auto px-6">
